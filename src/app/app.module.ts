@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { MessageComponent } from './message/message.component';
+import {VehicleServices} from './vehicle-service.service';
+import {MessageService} from './message.service';
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { MessageComponent } from './message/message.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [VehicleServices, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

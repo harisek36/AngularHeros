@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { VehicleDetailsDef} from './VehicleDetails';
-
+import { MessageService } from './message.service';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class VehicleServices {
-  constructor() { }
+  constructor(private messageService: MessageService) { }
   private _VEHICLES: VehicleDetailsDef[] = [
     { id: 11, name: 'Mr. Harish ' },
     { id: 12, name: 'Narco' },
@@ -22,6 +22,7 @@ export class VehicleServices {
 
 
   getVEHICLES(): Observable<VehicleDetailsDef[]> {
+    this.messageService.add('VehicleService: fetched vehicles');
     return of(this._VEHICLES);
   }
 }
