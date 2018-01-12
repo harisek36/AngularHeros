@@ -1,9 +1,4 @@
-export class Hero {
-  vin: string;
-  make: string;
-  model: string;
-  year: string;
-  redlineRpm: string;
-  maxFuelVolume: string;
-  lastServiceDate: string;
+export class VehicleDetailsDef {
+  id: number;
+  name: string;
 }
